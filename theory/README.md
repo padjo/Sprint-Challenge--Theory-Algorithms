@@ -15,7 +15,6 @@ both `antelope` and `antelopes`.)
 /antelopes?/
 
 * Single regex that matches either of these:
-/^(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/
   /antelopes?\srocks?\sout/g
     antelope rocks out
     antelopes rock out
@@ -73,6 +72,9 @@ both `antelope` and `antelopes`.)
     cursor position should accept any digits for the row and column. The
     bold sequence need only accept `1` (and is a trivial regex). (ESC is
     a single character which can be represented with `\e` in the regex.)
+
+     ESC[12;45f =  /^\e\[\d+.?\;\d+f/
+     ESC[1m = /^\e\[\d+\m/
 
   * Draw a state machine diagram for a VT-100 that can consume regular
     character sequences as well as the two above ESC sequences.

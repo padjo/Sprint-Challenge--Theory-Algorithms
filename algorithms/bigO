@@ -1,0 +1,58 @@
+a) O(n)  //n cubed / n sqared = n
+
+ a = 0;
+while (a < n * n * n)
+a = a + n * n;
+
+b) O (log n) // i is being divided by 2 on each iteration. binary. 
+
+// input array is of length n i = array.length - 1;
+while (array[i] > x && i >= 0)
+i = i/2;
+
+c) o(n)  // first loop ignore Math sqr root so n,the two for loops are trivial and constant as input increases so 
+         // ignore them. tricky !
+
+sum = 0;
+for (i = 0; i < Math.sqrt(n) / 2; i++)
+       for ( j = i; j < 8 + i; j++)
+         for (k = j; k < 8 + j; k++)
+sum++;
+
+d) O(n)  // first for loop is log n so very little influence on complexity. In effect
+// one for loop running n times. 
+
+sum = 0;
+for (i = 1; i < n; i *= 2)
+        for (j = 0; j < n; j++)
+           sum++;
+
+
+
+e) // O(n2) after two n loops we can ignore the other the others no effect 
+
+sum = 0;
+for (i = 0; i < n; i++)
+       for (j = i + 1; j < n; j++)
+         for (k = j + 1; k < n; k++)
+           for (l = k + 1; l < 10 + k; l++)
+             sum++;
+
+
+f) O(n!) // function calls itself recursively
+
+bunnyEars = function (bunnies) { // here bunnies === n if (bunnies === 0) return 0;
+return 2 + bunnyEars(bunnies-1);
+}
+
+
+g) // still )(n!)
+
+search = function (array, arraySize, target) { // here arraySize === n if (arraySize > 0) {
+         if (array[arraySize-1] === target) return true;
+         else return search(array, arraySize-1, target);
+       }
+      return false;
+     }
+
+

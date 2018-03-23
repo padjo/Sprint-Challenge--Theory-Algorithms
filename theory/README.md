@@ -2,16 +2,26 @@
 
 ## Regular Expressions
 
+//https://regexr.com 
+//https://www.regexpal.com
+//https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-guide-validate-us-telephone-numbers/16090
+// https://www.youtube.com/watch?v=JB71tFPsm2s
+//https://regexone.com/  -- good turorial
+//https://regexcrossword.com
+
 Find regexes that match the following. (e.g. find a single regex that matches
 both `antelope` and `antelopes`.)
+/./g  -- but this is not what you really want me to write :)
+/antelopes?/
 
 * Single regex that matches either of these:
-
+/^(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/
+  /antelopes?\srocks?\sout/g
     antelope rocks out
     antelopes rock out
 
 * Regex that matches either of:
-
+  [gm]oat
     goat
     moat
 
@@ -22,6 +32,8 @@ both `antelope` and `antelopes`.)
 * Regex that matches dates in YYYY-MM-DD format. (Year can be 1-4 digits, and
   month and day can each be 1-2 digits). This does not need to verify the date
   is correct (e.g 33333-33-33 can match).
+
+  /^(\d{1,4})-(\d{1,2})-(\d{1,2})/gm
 
   2000-10-12
   1999-1-20
